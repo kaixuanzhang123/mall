@@ -1,7 +1,6 @@
 package com.atguigu.common.constant;
 
-public class
-WareConstant {
+public class WareConstant {
 
     public enum  PurchaseStatusEnum{
         CREATED(0,"新建"),ASSIGNED(1,"已分配"),

@@ -8,7 +8,7 @@
 
 package com.atguigu.common.xss;
 
-import com.atguigu.common.utils.RRException;
+import io.niceseason.common.exception.RRException;
 import org.apache.commons.lang.StringUtils;
 
 /**
