@@ -2,7 +2,7 @@ package com.atguigu.gulimall.product.service;
 
 import com.atguigu.gulimall.product.entity.CategoryEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
-import io.niceseason.common.utils.PageUtils;
+import com.atguigu.common.utils.PageUtils;
 import com.atguigu.gulimall.product.vo.Catalog2Vo;
 
 import java.util.List;

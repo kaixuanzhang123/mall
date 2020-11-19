@@ -8,13 +8,12 @@
 
 package com.atguigu.common.xss;
 
-import io.niceseason.common.exception.RRException;
+import com.atguigu.common.exception.RRException;
 import org.apache.commons.lang.StringUtils;
 
 /**
  * SQL过滤
  *
- * @author Mark sunlightcs@gmail.com
  */
 public class SQLFilter {
 

@@ -5,9 +5,9 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.io.Serializable;
 
-import io.niceseason.common.constraints.ListValue;
-import io.niceseason.common.group.AddGroup;
-import io.niceseason.common.group.UpdateGroup;
+import com.atguigu.common.constraints.ListValue;
+import com.atguigu.common.group.AddGroup;
+import com.atguigu.common.group.UpdateGroup;
 import lombok.Data;
 import org.hibernate.validator.constraints.URL;
 

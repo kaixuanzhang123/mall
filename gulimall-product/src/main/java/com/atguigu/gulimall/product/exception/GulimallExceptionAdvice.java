@@ -1,7 +1,7 @@
 package com.atguigu.gulimall.product.exception;
 
-import io.niceseason.common.exception.BizCodeEnum;
-import io.niceseason.common.utils.R;
+import com.atguigu.common.exception.BizCodeEnum;
+import com.atguigu.common.utils.R;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Slf4j
-@RestControllerAdvice(basePackages = "io.niceseason.gulimall.product.controller")
+@RestControllerAdvice(basePackages = "com.atguigu.gulimall.product.controller")
 public class GulimallExceptionAdvice {
 
     @ExceptionHandler(value = {MethodArgumentNotValidException.class})

@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //Spring boot方式
 @EnableTransactionManagement
 @Configuration
-@MapperScan("io.niceseason.gulimall.product.dao")
+@MapperScan("com.atguigu.gulimall.product.dao")
 public class MybatisPlusConfig {
 
     @Bean

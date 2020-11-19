@@ -3,7 +3,7 @@ package com.atguigu.gulimall.product.service;
 import com.atguigu.gulimall.product.entity.SkuSaleAttrValueEntity;
 import com.atguigu.gulimall.product.vo.SkuItemSaleAttrVo;
 import com.baomidou.mybatisplus.extension.service.IService;
-import io.niceseason.common.utils.PageUtils;
+import com.atguigu.common.utils.PageUtils;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
