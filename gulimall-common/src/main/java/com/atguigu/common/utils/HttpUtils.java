@@ -33,8 +33,6 @@ import java.util.Map;
 public class HttpUtils {
 
     /**
-     * get
-     *
      * @param host
      * @param path
      * @param method

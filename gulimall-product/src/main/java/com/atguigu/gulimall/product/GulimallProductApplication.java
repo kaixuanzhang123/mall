@@ -11,9 +11,9 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableRedisHttpSession
 @SpringBootApplication
 @EnableDiscoveryClient
-@MapperScan("io.niceseason.gulimall.product.dao")
+@MapperScan("com.atguigu.gulimall.product.dao")
 @EnableCaching
-@EnableFeignClients(basePackages = {"io.niceseason.gulimall.product.feign"})
+@EnableFeignClients(basePackages = {"com.atguigu.gulimall.product.feign"})
 public class GulimallProductApplication {
 
     public static void main(String[] args) {

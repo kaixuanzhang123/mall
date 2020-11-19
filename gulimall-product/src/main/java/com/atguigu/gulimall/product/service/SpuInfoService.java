@@ -3,7 +3,7 @@ package com.atguigu.gulimall.product.service;
 import com.atguigu.gulimall.product.entity.SpuInfoEntity;
 import com.atguigu.gulimall.product.vo.SpuSaveVo;
 import com.baomidou.mybatisplus.extension.service.IService;
-import io.niceseason.common.utils.PageUtils;
+import com.atguigu.common.utils.PageUtils;
 
 import java.util.Map;
 

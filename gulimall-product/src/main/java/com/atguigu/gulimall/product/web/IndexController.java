@@ -3,7 +3,7 @@ package com.atguigu.gulimall.product.web;
 import com.atguigu.gulimall.product.entity.CategoryEntity;
 import com.atguigu.gulimall.product.feign.SeckillFeignService;
 import com.atguigu.gulimall.product.service.CategoryService;
-import io.niceseason.common.utils.R;
+import com.atguigu.common.utils.R;
 import com.atguigu.gulimall.product.vo.Catalog2Vo;
 import org.redisson.api.*;
 import org.redisson.client.RedisClient;

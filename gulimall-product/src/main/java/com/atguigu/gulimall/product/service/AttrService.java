@@ -3,7 +3,7 @@ package com.atguigu.gulimall.product.service;
 import com.atguigu.gulimall.product.entity.AttrAttrgroupRelationEntity;
 import com.atguigu.gulimall.product.entity.AttrEntity;
 import com.baomidou.mybatisplus.extension.service.IService;
-import io.niceseason.common.utils.PageUtils;
+import com.atguigu.common.utils.PageUtils;
 import com.atguigu.gulimall.product.entity.ProductAttrValueEntity;
 import com.atguigu.gulimall.product.vo.AttrRespVo;
 import com.atguigu.gulimall.product.vo.AttrVo;

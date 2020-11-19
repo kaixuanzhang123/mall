@@ -1,7 +1,7 @@
 package com.atguigu.gulimall.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import io.niceseason.common.utils.PageUtils;
+import com.atguigu.common.utils.PageUtils;
 import com.atguigu.gulimall.product.entity.AttrGroupEntity;
 import com.atguigu.gulimall.product.vo.AttrGroupWithAttrVo;
 

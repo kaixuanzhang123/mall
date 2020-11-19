@@ -3,18 +3,18 @@ package com.atguigu.gulimall.product.service.impl;
 import com.atguigu.gulimall.product.entity.*;
 import com.atguigu.gulimall.product.service.*;
 import com.atguigu.gulimall.product.vo.*;
-import io.niceseason.common.constant.ProductConstant;
-import io.niceseason.common.to.SkuHasStockVo;
-import io.niceseason.common.to.SkuReductionTo;
-import io.niceseason.common.to.SpuBoundTo;
-import io.niceseason.common.to.es.SkuEsModel;
-import io.niceseason.common.utils.R;
-import io.niceseason.gulimall.product.entity.*;
+import com.atguigu.common.constant.ProductConstant;
+import com.atguigu.common.to.SkuHasStockVo;
+import com.atguigu.common.to.SkuReductionTo;
+import com.atguigu.common.to.SpuBoundTo;
+import com.atguigu.common.to.es.SkuEsModel;
+import com.atguigu.common.utils.R;
+import com.atguigu.gulimall.product.entity.*;
 import com.atguigu.gulimall.product.feign.CouponFeignService;
 import com.atguigu.gulimall.product.feign.SearchFeignService;
 import com.atguigu.gulimall.product.feign.WareFeignService;
-import io.niceseason.gulimall.product.service.*;
-import io.niceseason.gulimall.product.vo.*;
+import com.atguigu.gulimall.product.service.*;
+import com.atguigu.gulimall.product.vo.*;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +26,8 @@ import java.util.stream.Collectors;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import io.niceseason.common.utils.PageUtils;
-import io.niceseason.common.utils.Query;
+import com.atguigu.common.utils.PageUtils;
+import com.atguigu.common.utils.Query;
 
 import com.atguigu.gulimall.product.dao.SpuInfoDao;
 import org.springframework.transaction.annotation.Transactional;
@@ -276,7 +276,7 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         //TODO 5、将数据发给es进行保存：gulimall-search
         R r = searchFeignService.saveProductAsIndices(skuEsModels);
         if (r.getCode()==0){
-            this.baseMapper.upSpuStatus(spuId, ProductConstant.ProductStatusEnum.SPU_UP.getCode());
+            this.baseMapper.updateSpuStatus(spuId, ProductConstant.ProductStatusEnum.SPU_UP.getCode());
         }else {
             log.error("商品远程es保存失败");
         }

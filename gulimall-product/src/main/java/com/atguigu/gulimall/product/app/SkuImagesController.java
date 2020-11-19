@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.atguigu.gulimall.product.entity.SkuImagesEntity;
 import com.atguigu.gulimall.product.service.SkuImagesService;
-import io.niceseason.common.utils.PageUtils;
-import io.niceseason.common.utils.R;
+import com.atguigu.common.utils.PageUtils;
+import com.atguigu.common.utils.R;
 
 
 
