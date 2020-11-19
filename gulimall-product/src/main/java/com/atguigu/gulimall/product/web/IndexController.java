@@ -6,7 +6,6 @@ import com.atguigu.gulimall.product.service.CategoryService;
 import com.atguigu.common.utils.R;
 import com.atguigu.gulimall.product.vo.Catalog2Vo;
 import org.redisson.api.*;
-import org.redisson.client.RedisClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
@@ -41,7 +40,7 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("index/json/catalog.json")
+    @GetMapping("static/json/catalog.json")
     @ResponseBody
     public Map<String, List<Catalog2Vo>> getCategoryMap() {
         return categoryService.getCatalogJsonDbWithSpringCache();
