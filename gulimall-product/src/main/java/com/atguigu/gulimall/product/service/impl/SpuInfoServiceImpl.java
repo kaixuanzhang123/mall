@@ -84,7 +84,7 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         return new PageUtils(page);
     }
 
-    @Transactional
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public void saveSpuSaveVo(SpuSaveVo spuSaveVo) {
         //1、保存spu基本信息 pms_spu_info
@@ -119,11 +119,11 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         }).collect(Collectors.toList());
         productAttrValueService.saveBatch(collect);
 
-        //5、保存spu的积分信息；gulimall_sms->sms_spu_bounds
-        SpuBoundTo spuBoundTo = new SpuBoundTo();
-        BeanUtils.copyProperties(spuSaveVo.getBounds(),spuBoundTo);
-        spuBoundTo.setSpuId(spuInfoEntity.getId());
-        couponFeignService.saveSpuBounds(spuBoundTo);
+        //TODO:5、保存spu的积分信息；gulimall_sms->sms_spu_bounds
+//        SpuBoundTo spuBoundTo = new SpuBoundTo();
+//        BeanUtils.copyProperties(spuSaveVo.getBounds(),spuBoundTo);
+//        spuBoundTo.setSpuId(spuInfoEntity.getId());
+//        couponFeignService.saveSpuBounds(spuBoundTo);
 
         //5、保存当前spu对应的所有sku信息；
         List<Skus> skus = spuSaveVo.getSkus();
@@ -151,9 +151,7 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
                     BeanUtils.copyProperties(image, imagesEntity);
                     imagesEntity.setSkuId(skuInfoEntity.getSkuId());
                     return imagesEntity;
-                }).filter(image->{
-                    return !StringUtils.isEmpty(image.getImgUrl());
-                }).collect(Collectors.toList());
+                }).filter(image-> !StringUtils.isEmpty(image.getImgUrl())).collect(Collectors.toList());
                 skuImagesService.saveBatch(skuImagesEntities);
 
                 //5.3）、sku的销售属性信息：pms_sku_sale_attr_value
@@ -166,13 +164,13 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
                 }).collect(Collectors.toList());
                 skuSaleAttrValueService.saveBatch(skuSaleAttrValueEntities);
 
-                // //5.4）、sku的优惠、满减等信息；gulimall_sms->sms_sku_ladder\sms_sku_full_reduction\sms_member_price
-                SkuReductionTo skuReductionTo = new SkuReductionTo();
-                BeanUtils.copyProperties(sku, skuReductionTo);
-                skuReductionTo.setSkuId(skuInfoEntity.getSkuId());
-                if(skuReductionTo.getFullCount() >0 || skuReductionTo.getFullPrice().compareTo(new BigDecimal("0")) == 1){
-                    R r = couponFeignService.saveSkuReductionTo(skuReductionTo);
-                }
+//                // //5.4）、sku的优惠、满减等信息；gulimall_sms->sms_sku_ladder\sms_sku_full_reduction\sms_member_price
+//                SkuReductionTo skuReductionTo = new SkuReductionTo();
+//                BeanUtils.copyProperties(sku, skuReductionTo);
+//                skuReductionTo.setSkuId(skuInfoEntity.getSkuId());
+//                if(skuReductionTo.getFullCount() >0 || skuReductionTo.getFullPrice().compareTo(new BigDecimal("0")) == 1){
+//                    R r = couponFeignService.saveSkuReductionTo(skuReductionTo);
+//                }
             });
         }
 
