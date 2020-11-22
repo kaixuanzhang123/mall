@@ -23,7 +23,7 @@ public class HomeSubjectSpuEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * ×¨ÌâÃû×Ö
 	 */
@@ -31,11 +31,11 @@ public class HomeSubjectSpuEntity implements Serializable {
 	/**
 	 * ×¨Ìâid
 	 */
-	private Longw subjectId;
+	private Long subjectId;
 	/**
 	 * spu_id
 	 */
-	private Longw spuId;
+	private Long spuId;
 	/**
 	 * ÅÅÐò
 	 */

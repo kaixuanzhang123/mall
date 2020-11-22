@@ -24,7 +24,7 @@ public class CouponEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * ÓÅ»Ý¾íÀàÐÍ[0->È«³¡ÔùÈ¯£»1->»áÔ±ÔùÈ¯£»2->¹ºÎïÔùÈ¯£»3->×¢²áÔùÈ¯]
 	 */

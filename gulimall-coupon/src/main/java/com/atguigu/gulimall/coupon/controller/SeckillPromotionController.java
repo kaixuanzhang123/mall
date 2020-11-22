@@ -47,7 +47,7 @@ public class SeckillPromotionController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:seckillpromotion:info")
-    public R info(@PathVariable("id") Longw id){
+    public R info(@PathVariable("id") Long id){
 		SeckillPromotionEntity seckillPromotion = seckillPromotionService.getById(id);
 
         return R.ok().put("seckillPromotion", seckillPromotion);
@@ -80,7 +80,7 @@ public class SeckillPromotionController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:seckillpromotion:delete")
-    public R delete(@RequestBody Longw[] ids){
+    public R delete(@RequestBody Long[] ids){
 		seckillPromotionService.removeByIds(Arrays.asList(ids));
 
         return R.ok();

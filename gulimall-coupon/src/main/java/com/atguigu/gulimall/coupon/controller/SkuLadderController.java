@@ -47,7 +47,7 @@ public class SkuLadderController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:skuladder:info")
-    public R info(@PathVariable("id") Longw id){
+    public R info(@PathVariable("id") Long id){
 		SkuLadderEntity skuLadder = skuLadderService.getById(id);
 
         return R.ok().put("skuLadder", skuLadder);
@@ -80,7 +80,7 @@ public class SkuLadderController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:skuladder:delete")
-    public R delete(@RequestBody Longw[] ids){
+    public R delete(@RequestBody Long[] ids){
 		skuLadderService.removeByIds(Arrays.asList(ids));
 
         return R.ok();

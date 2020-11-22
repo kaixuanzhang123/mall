@@ -47,7 +47,7 @@ public class SeckillSkuRelationController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:seckillskurelation:info")
-    public R info(@PathVariable("id") Longw id){
+    public R info(@PathVariable("id") Long id){
 		SeckillSkuRelationEntity seckillSkuRelation = seckillSkuRelationService.getById(id);
 
         return R.ok().put("seckillSkuRelation", seckillSkuRelation);
@@ -80,7 +80,7 @@ public class SeckillSkuRelationController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:seckillskurelation:delete")
-    public R delete(@RequestBody Longw[] ids){
+    public R delete(@RequestBody Long[] ids){
 		seckillSkuRelationService.removeByIds(Arrays.asList(ids));
 
         return R.ok();

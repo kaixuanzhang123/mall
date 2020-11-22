@@ -47,7 +47,7 @@ public class HomeSubjectController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:homesubject:info")
-    public R info(@PathVariable("id") Longw id){
+    public R info(@PathVariable("id") Long id){
 		HomeSubjectEntity homeSubject = homeSubjectService.getById(id);
 
         return R.ok().put("homeSubject", homeSubject);
@@ -80,7 +80,7 @@ public class HomeSubjectController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:homesubject:delete")
-    public R delete(@RequestBody Longw[] ids){
+    public R delete(@RequestBody Long[] ids){
 		homeSubjectService.removeByIds(Arrays.asList(ids));
 
         return R.ok();

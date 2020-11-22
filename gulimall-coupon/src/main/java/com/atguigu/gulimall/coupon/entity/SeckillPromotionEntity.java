@@ -23,7 +23,7 @@ public class SeckillPromotionEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * »î¶¯±êÌâ
 	 */
@@ -47,6 +47,6 @@ public class SeckillPromotionEntity implements Serializable {
 	/**
 	 * ´´½¨ÈË
 	 */
-	private Longw userId;
+	private Long userId;
 
 }

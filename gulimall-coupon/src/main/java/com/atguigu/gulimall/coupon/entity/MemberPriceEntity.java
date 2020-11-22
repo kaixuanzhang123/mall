@@ -24,15 +24,15 @@ public class MemberPriceEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * sku_id
 	 */
-	private Longw skuId;
+	private Long skuId;
 	/**
 	 * »áÔ±µÈ¼¶id
 	 */
-	private Longw memberLevelId;
+	private Long memberLevelId;
 	/**
 	 * »áÔ±µÈ¼¶Ãû
 	 */

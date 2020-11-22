@@ -23,7 +23,7 @@ public class HomeAdvEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * Ãû×Ö
 	 */
@@ -63,10 +63,10 @@ public class HomeAdvEntity implements Serializable {
 	/**
 	 * ·¢²¼Õß
 	 */
-	private Longw publisherId;
+	private Long publisherId;
 	/**
 	 * ÉóºËÕß
 	 */
-	private Longw authId;
+	private Long authId;
 
 }

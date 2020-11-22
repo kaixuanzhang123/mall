@@ -23,19 +23,19 @@ public class SeckillSkuNoticeEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * member_id
 	 */
-	private Longw memberId;
+	private Long memberId;
 	/**
 	 * sku_id
 	 */
-	private Longw skuId;
+	private Long skuId;
 	/**
 	 * »î¶¯³¡´Îid
 	 */
-	private Longw sessionId;
+	private Long sessionId;
 	/**
 	 * ¶©ÔÄÊ±¼ä
 	 */

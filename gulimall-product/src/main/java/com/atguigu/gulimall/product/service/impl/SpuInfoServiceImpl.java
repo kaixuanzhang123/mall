@@ -120,10 +120,10 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         productAttrValueService.saveBatch(collect);
 
         //TODO:5、保存spu的积分信息；gulimall_sms->sms_spu_bounds
-//        SpuBoundTo spuBoundTo = new SpuBoundTo();
-//        BeanUtils.copyProperties(spuSaveVo.getBounds(),spuBoundTo);
-//        spuBoundTo.setSpuId(spuInfoEntity.getId());
-//        couponFeignService.saveSpuBounds(spuBoundTo);
+        SpuBoundTo spuBoundTo = new SpuBoundTo();
+        BeanUtils.copyProperties(spuSaveVo.getBounds(),spuBoundTo);
+        spuBoundTo.setSpuId(spuInfoEntity.getId());
+        couponFeignService.saveSpuBounds(spuBoundTo);
 
         //5、保存当前spu对应的所有sku信息；
         List<Skus> skus = spuSaveVo.getSkus();
@@ -164,13 +164,13 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
                 }).collect(Collectors.toList());
                 skuSaleAttrValueService.saveBatch(skuSaleAttrValueEntities);
 
-//                // //5.4）、sku的优惠、满减等信息；gulimall_sms->sms_sku_ladder\sms_sku_full_reduction\sms_member_price
-//                SkuReductionTo skuReductionTo = new SkuReductionTo();
-//                BeanUtils.copyProperties(sku, skuReductionTo);
-//                skuReductionTo.setSkuId(skuInfoEntity.getSkuId());
-//                if(skuReductionTo.getFullCount() >0 || skuReductionTo.getFullPrice().compareTo(new BigDecimal("0")) == 1){
-//                    R r = couponFeignService.saveSkuReductionTo(skuReductionTo);
-//                }
+                // //5.4）、sku的优惠、满减等信息；gulimall_sms->sms_sku_ladder\sms_sku_full_reduction\sms_member_price
+                SkuReductionTo skuReductionTo = new SkuReductionTo();
+                BeanUtils.copyProperties(sku, skuReductionTo);
+                skuReductionTo.setSkuId(skuInfoEntity.getSkuId());
+                if(skuReductionTo.getFullCount() >0 || skuReductionTo.getFullPrice().compareTo(new BigDecimal("0")) == 1){
+                    R r = couponFeignService.saveSkuReductionTo(skuReductionTo);
+                }
             });
         }
 

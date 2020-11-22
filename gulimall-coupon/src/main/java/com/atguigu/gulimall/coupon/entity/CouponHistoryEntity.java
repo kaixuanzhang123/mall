@@ -23,15 +23,15 @@ public class CouponHistoryEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * ÓÅ»ÝÈ¯id
 	 */
-	private Longw couponId;
+	private Long couponId;
 	/**
 	 * »áÔ±id
 	 */
-	private Longw memberId;
+	private Long memberId;
 	/**
 	 * »áÔ±Ãû×Ö
 	 */
@@ -55,10 +55,10 @@ public class CouponHistoryEntity implements Serializable {
 	/**
 	 * ¶©µ¥id
 	 */
-	private Longw orderId;
+	private Long orderId;
 	/**
 	 * ¶©µ¥ºÅ
 	 */
-	private Longw orderSn;
+	private Long orderSn;
 
 }

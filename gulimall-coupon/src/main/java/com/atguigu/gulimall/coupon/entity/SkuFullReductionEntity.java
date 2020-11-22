@@ -24,11 +24,11 @@ public class SkuFullReductionEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * spu_id
 	 */
-	private Longw skuId;
+	private Long skuId;
 	/**
 	 * Âú¶àÉÙ
 	 */

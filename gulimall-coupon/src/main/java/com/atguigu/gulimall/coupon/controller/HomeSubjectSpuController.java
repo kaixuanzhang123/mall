@@ -47,7 +47,7 @@ public class HomeSubjectSpuController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:homesubjectspu:info")
-    public R info(@PathVariable("id") Longw id){
+    public R info(@PathVariable("id") Long id){
 		HomeSubjectSpuEntity homeSubjectSpu = homeSubjectSpuService.getById(id);
 
         return R.ok().put("homeSubjectSpu", homeSubjectSpu);
@@ -80,7 +80,7 @@ public class HomeSubjectSpuController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:homesubjectspu:delete")
-    public R delete(@RequestBody Longw[] ids){
+    public R delete(@RequestBody Long[] ids){
 		homeSubjectSpuService.removeByIds(Arrays.asList(ids));
 
         return R.ok();

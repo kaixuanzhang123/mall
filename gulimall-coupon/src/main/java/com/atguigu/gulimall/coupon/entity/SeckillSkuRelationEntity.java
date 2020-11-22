@@ -24,19 +24,19 @@ public class SeckillSkuRelationEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * »î¶¯id
 	 */
-	private Longw promotionId;
+	private Long promotionId;
 	/**
 	 * »î¶¯³¡´Îid
 	 */
-	private Longw promotionSessionId;
+	private Long promotionSessionId;
 	/**
 	 * ÉÌÆ·id
 	 */
-	private Longw skuId;
+	private Long skuId;
 	/**
 	 * ÃëÉ±¼Û¸ñ
 	 */

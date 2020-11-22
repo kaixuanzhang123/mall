@@ -47,7 +47,7 @@ public class MemberPriceController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:memberprice:info")
-    public R info(@PathVariable("id") Longw id){
+    public R info(@PathVariable("id") Long id){
 		MemberPriceEntity memberPrice = memberPriceService.getById(id);
 
         return R.ok().put("memberPrice", memberPrice);
@@ -80,7 +80,7 @@ public class MemberPriceController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:memberprice:delete")
-    public R delete(@RequestBody Longw[] ids){
+    public R delete(@RequestBody Long[] ids){
 		memberPriceService.removeByIds(Arrays.asList(ids));
 
         return R.ok();

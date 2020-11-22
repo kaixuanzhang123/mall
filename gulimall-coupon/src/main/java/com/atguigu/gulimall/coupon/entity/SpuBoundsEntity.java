@@ -24,11 +24,11 @@ public class SpuBoundsEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * 
 	 */
-	private Longw spuId;
+	private Long spuId;
 	/**
 	 * ³É³¤»ý·Ö
 	 */

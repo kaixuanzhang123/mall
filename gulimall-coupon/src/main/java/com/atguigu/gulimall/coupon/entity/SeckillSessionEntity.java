@@ -23,7 +23,7 @@ public class SeckillSessionEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * ³¡´ÎÃû³Æ
 	 */

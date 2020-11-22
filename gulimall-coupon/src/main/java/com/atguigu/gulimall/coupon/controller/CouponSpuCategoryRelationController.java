@@ -47,7 +47,7 @@ public class CouponSpuCategoryRelationController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:couponspucategoryrelation:info")
-    public R info(@PathVariable("id") Longw id){
+    public R info(@PathVariable("id") Long id){
 		CouponSpuCategoryRelationEntity couponSpuCategoryRelation = couponSpuCategoryRelationService.getById(id);
 
         return R.ok().put("couponSpuCategoryRelation", couponSpuCategoryRelation);
@@ -80,7 +80,7 @@ public class CouponSpuCategoryRelationController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:couponspucategoryrelation:delete")
-    public R delete(@RequestBody Longw[] ids){
+    public R delete(@RequestBody Long[] ids){
 		couponSpuCategoryRelationService.removeByIds(Arrays.asList(ids));
 
         return R.ok();

@@ -23,7 +23,7 @@ public class HomeSubjectEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * ×¨ÌâÃû×Ö
 	 */

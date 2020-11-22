@@ -23,15 +23,15 @@ public class CouponSpuCategoryRelationEntity implements Serializable {
 	 * id
 	 */
 	@TableId
-	private Longw id;
+	private Long id;
 	/**
 	 * ÓÅ»ÝÈ¯id
 	 */
-	private Longw couponId;
+	private Long couponId;
 	/**
 	 * ²úÆ··ÖÀàid
 	 */
-	private Longw categoryId;
+	private Long categoryId;
 	/**
 	 * ²úÆ··ÖÀàÃû³Æ
 	 */

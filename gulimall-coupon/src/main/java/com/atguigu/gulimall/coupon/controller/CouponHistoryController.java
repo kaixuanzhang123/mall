@@ -47,7 +47,7 @@ public class CouponHistoryController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:couponhistory:info")
-    public R info(@PathVariable("id") Longw id){
+    public R info(@PathVariable("id") Long id){
 		CouponHistoryEntity couponHistory = couponHistoryService.getById(id);
 
         return R.ok().put("couponHistory", couponHistory);
@@ -80,7 +80,7 @@ public class CouponHistoryController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:couponhistory:delete")
-    public R delete(@RequestBody Longw[] ids){
+    public R delete(@RequestBody Long[] ids){
 		couponHistoryService.removeByIds(Arrays.asList(ids));
 
         return R.ok();

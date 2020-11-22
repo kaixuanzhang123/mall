@@ -47,7 +47,7 @@ public class SeckillSessionController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:seckillsession:info")
-    public R info(@PathVariable("id") Longw id){
+    public R info(@PathVariable("id") Long id){
 		SeckillSessionEntity seckillSession = seckillSessionService.getById(id);
 
         return R.ok().put("seckillSession", seckillSession);
@@ -80,7 +80,7 @@ public class SeckillSessionController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:seckillsession:delete")
-    public R delete(@RequestBody Longw[] ids){
+    public R delete(@RequestBody Long[] ids){
 		seckillSessionService.removeByIds(Arrays.asList(ids));
 
         return R.ok();

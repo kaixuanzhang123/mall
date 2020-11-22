@@ -47,7 +47,7 @@ public class SkuFullReductionController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:skufullreduction:info")
-    public R info(@PathVariable("id") Longw id){
+    public R info(@PathVariable("id") Long id){
 		SkuFullReductionEntity skuFullReduction = skuFullReductionService.getById(id);
 
         return R.ok().put("skuFullReduction", skuFullReduction);
@@ -80,7 +80,7 @@ public class SkuFullReductionController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:skufullreduction:delete")
-    public R delete(@RequestBody Longw[] ids){
+    public R delete(@RequestBody Long[] ids){
 		skuFullReductionService.removeByIds(Arrays.asList(ids));
 
         return R.ok();

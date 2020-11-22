@@ -47,7 +47,7 @@ public class SpuBoundsController {
      */
     @RequestMapping("/info/{id}")
     //@RequiresPermissions("coupon:spubounds:info")
-    public R info(@PathVariable("id") Longw id){
+    public R info(@PathVariable("id") Long id){
 		SpuBoundsEntity spuBounds = spuBoundsService.getById(id);
 
         return R.ok().put("spuBounds", spuBounds);
@@ -80,7 +80,7 @@ public class SpuBoundsController {
      */
     @RequestMapping("/delete")
     //@RequiresPermissions("coupon:spubounds:delete")
-    public R delete(@RequestBody Longw[] ids){
+    public R delete(@RequestBody Long[] ids){
 		spuBoundsService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
