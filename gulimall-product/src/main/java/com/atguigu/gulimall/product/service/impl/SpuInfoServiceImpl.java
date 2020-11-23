@@ -225,14 +225,10 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         List<SkuInfoEntity> skuInfoEntities=skuInfoService.getSkusBySpuId(spuId);
         //TODO 4、查出当前sku的所有可以被用来检索的规格属性
         List<ProductAttrValueEntity> productAttrValueEntities = productAttrValueService.list(new QueryWrapper<ProductAttrValueEntity>().eq("spu_id", spuId));
-        List<Long> attrIds = productAttrValueEntities.stream().map(attr -> {
-            return attr.getAttrId();
-        }).collect(Collectors.toList());
+        List<Long> attrIds = productAttrValueEntities.stream().map(ProductAttrValueEntity::getAttrId).collect(Collectors.toList());
         List<Long> searchIds=attrService.selectSearchAttrIds(attrIds);
         Set<Long> ids = new HashSet<>(searchIds);
-        List<SkuEsModel.Attr> searchAttrs = productAttrValueEntities.stream().filter(entity -> {
-            return ids.contains(entity.getAttrId());
-        }).map(entity -> {
+        List<SkuEsModel.Attr> searchAttrs = productAttrValueEntities.stream().filter(entity -> ids.contains(entity.getAttrId())).map(entity -> {
             SkuEsModel.Attr attr = new SkuEsModel.Attr();
             BeanUtils.copyProperties(entity, attr);
             return attr;
