@@ -13,3 +13,7 @@ spring:
       discovery:
         server-addr: 152.136.194.75:8848
         namespace: 02870fc4-9b8c-4c83-a73a-def67e7290bc
+feign:
+  httpclient:
+    connection-timeout: 20000
+
