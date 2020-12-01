@@ -17,8 +17,8 @@ spring:
             #Oracle需要打开注释
             #validation-query: SELECT 1 FROM DUAL
             test-while-idle: true
-            test-on-borrow: false
-            test-on-return: false
+            test-on-borrow: true
+            test-on-return: true
             stat-view-servlet:
                 enabled: true
                 url-pattern: /druid/*
