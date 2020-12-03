@@ -40,11 +40,17 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("static/json/catalog.json")
+    @GetMapping("/index/catalog.json")
     @ResponseBody
     public Map<String, List<Catalog2Vo>> getCategoryMap() {
         return categoryService.getCatalogJsonDbWithSpringCache();
     }
+
+//    @GetMapping("static/json/catalog.json")
+//    @ResponseBody
+//    public Map<String, List<Catalog2Vo>> getCategoryMap() {
+//        return categoryService.getCatalogJsonDbWithSpringCache();
+//    }
 
     @GetMapping("/read")
     @ResponseBody

@@ -7,6 +7,7 @@ import java.util.Map;
 //import org.apache.shiro.authz.annotation.RequiresPermissions;
 import com.atguigu.gulimall.product.entity.CategoryBrandRelationEntity;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import org.apache.http.impl.execchain.TunnelRefusedException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -89,7 +90,7 @@ public class CategoryBrandRelationController {
 
     ///product/categorybrandrelation/brands/list
     @GetMapping("/brands/list")
-    public R getBrandsByCategory(@RequestParam("catId") Long catelogId) {
+    public R getBrandsByCategory(@RequestParam(value = "catId",required = true) Long catelogId) {
         List<CategoryBrandRelationEntity> entities=categoryBrandRelationService.getBrandsByCayId(catelogId);
         return R.ok().put("data", entities);
     }

@@ -17,4 +17,4 @@ spring:
     name: gulimall-gateway
 
 server:
-  port: 8998
+  port: 88

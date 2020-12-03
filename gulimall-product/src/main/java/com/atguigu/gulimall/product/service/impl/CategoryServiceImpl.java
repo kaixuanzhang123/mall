@@ -109,11 +109,13 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         return parent_cid;
     }
 
+    @Override
     @Cacheable(value = {"category"},key = "#root.methodName",sync = true)
     public Map<String, List<Catalog2Vo>> getCatalogJsonDbWithSpringCache() {
         return getCategoriesDb();
     }
 
+    @Override
     public Map<String, List<Catalog2Vo>> getCatalogJsonDbWithRedisson() {
         Map<String, List<Catalog2Vo>> categoryMap=null;
         RLock lock = redissonClient.getLock("CatalogJson-Lock");
