@@ -85,6 +85,7 @@ public class SearchServiceImpl implements SearchService {
         RangeQueryBuilder rangeQueryBuilder = QueryBuilders.rangeQuery("skuPrice");
         if (!StringUtils.isEmpty(searchParam.getSkuPrice())) {
             String[] prices = searchParam.getSkuPrice().split("_");
+
             if (prices.length == 1) {
                 if (searchParam.getSkuPrice().startsWith("_")) {
                     rangeQueryBuilder.lte(Integer.parseInt(prices[0]));
@@ -167,6 +168,7 @@ public class SearchServiceImpl implements SearchService {
         log.debug("构建的DSL语句 {}",searchSourceBuilder.toString());
 
         SearchRequest request = new SearchRequest(new String[]{EsConstant.PRODUCT_INDEX}, searchSourceBuilder);
+        
         return request;
     }
 }
