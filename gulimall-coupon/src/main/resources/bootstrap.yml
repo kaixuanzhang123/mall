@@ -4,12 +4,12 @@ spring:
   cloud:
     nacos:
       config:
-        server-addr: 152.136.194.75:8848
+        server-addr: 152.*.*.*:8848
         namespace: 02870fc4-9b8c-4c83-a73a-def67e7290bc
         group: DEFAULT_GROUP
         file-extension: yml
         prefix: gulimall-coupon
 
       discovery:
-        server-addr: 152.136.194.75:8848
+        server-addr: 152.*.*.*:8848
         namespace: 02870fc4-9b8c-4c83-a73a-def67e7290bc

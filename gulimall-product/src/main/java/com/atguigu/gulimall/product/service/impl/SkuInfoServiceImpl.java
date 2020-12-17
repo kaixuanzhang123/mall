@@ -161,9 +161,7 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
         //等待所有任务执行完成
         try {
             CompletableFuture.allOf(imageFuture, saleFuture, descFuture, attrFuture,seckFuture).get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
 

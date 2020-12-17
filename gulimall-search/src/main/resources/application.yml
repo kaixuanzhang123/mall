@@ -5,13 +5,13 @@
 ##  cloud:
 ##    sentinel:
 ##      transport:
-##        dashboard: 152.136.194.75:8080
+##        dashboard: 152.*.*.*:8080
 #  redis:
-#    host: 152.136.194.75
+#    host: 152.*.*.*
 #  session:
 #    store-type: redis
 ##  zipkin:
-##    base-url: http://152.136.194.75:9411
+##    base-url: http://152.*.*.*:9411
 ##    sender:
 ##      type: web
 ##    discovery-client-enabled: false

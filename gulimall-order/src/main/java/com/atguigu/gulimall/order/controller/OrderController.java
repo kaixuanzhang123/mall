@@ -53,6 +53,14 @@ public class OrderController {
         return R.ok().put("order", order);
     }
 
+    @RequestMapping("/infoByOrderSn/{OrderSn}")
+    public R infoByOrderSn(@PathVariable("OrderSn") String OrderSn){
+        OrderEntity order = orderService.getOrderByOrderSn(OrderSn);
+
+        return R.ok().put("order", order);
+    }
+
+
     /**
      * 保存
      */

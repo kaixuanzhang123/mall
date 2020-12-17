@@ -26,4 +26,10 @@ public class OrderServiceImpl extends ServiceImpl<OrderDao, OrderEntity> impleme
         return new PageUtils(page);
     }
 
+    @Override
+    public OrderEntity getOrderByOrderSn(String orderSn) {
+        OrderEntity order_sn = this.getOne(new QueryWrapper<OrderEntity>().eq("order_sn", orderSn));
+
+        return order_sn;
+    }
 }
